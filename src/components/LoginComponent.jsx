@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { LoginAPI, GoogleSignInAPI } from "../api/AuthAPI";
-import LinkedinLogo from "../assets/linkedinLogo.png";
+import LinkedinLogo from "../assets/Mission.png";
 import GoogleButton from 'react-google-button';
 import { useNavigate } from "react-router-dom";
 import '../Sass/LoginComponent.scss';
@@ -13,6 +13,7 @@ export default function LoginComponent() {
         try{
             let res = await LoginAPI(credentials.email, credentials.password);
             toast.success("Signed In to Linkedin!");
+            navigate("/home");
         } catch(err) {
             toast.error("Please Check your Credentials.");
             toast.error("If it is your first time in the platform, Click Join now !");
@@ -22,48 +23,38 @@ export default function LoginComponent() {
     const googleSignIn = () => {
         let response = GoogleSignInAPI();
         console.log(response);
+        navigate("/home");
     };
     return( 
-    <div className = "login-wrapper">
-        <img src ={LinkedinLogo} className="linkedinLogo"/>
-        <div className="login-wrapper-inner">
-        <h1 className="heading">Sign in</h1>
-        <p className="sub-heading">Stay updated on your professional world</p>
-        <div className="auth-inputs">
-            <input
-                onChange={(event) =>
-                    setCredentials({ ...credentials, email: event.target.value})
-                }
-                type="email"
-                className = "common-input"
-                placeholder = "Email or Phone"
-            />
-            <input 
-                onChange= {(event) =>
-                    setCredentials({...credentials, password: event.target.value})
-                }
-                type="password"
-                className="common-input"
-                placeholder= "Password"
-            />
-        </div>
-        <button onClick={login} className="login-btn">
-            Sign in
-        </button>
-        </div>
-        <hr className="hr-text" data-content="or"/>
-        <div className="google-btn-container">
-            <GoogleButton
-                className="google-btn"
-                onClick={googleSignIn}
-            />
-            <p className="go-to-signup">
-                New to Linkedin?{" "}
-                <span className="join-now" onClick={() => navigate('/register')}>
-                    Join now
-                </span>
-            </p>
-        </div>
-    </div>
+        <div className="login-wrapper">
+            <div className="container-top-landing-page">
+                <img src={LinkedinLogo} className="linkedinLogo" />
+                <button onClick={() => navigate("/register")} className="admin-btn">
+                    Administrador
+                </button>
+            </div>
+            <div className="login-wrapper-inner">
+                <div className="sign-container">
+                    <div className="missionary-sign-container">
+                        <h1 className="heading">Sou um missionário</h1>
+                        <button onClick={() => navigate("/register")} className="signUp-btn">
+                            Cadastrar
+                        </button>
+                        <button onClick={login} class className="signIn-btn">
+                            Login
+                        </button>
+                    </div>
+                    <div className="member-sign-container">
+                        <h1 className="heading">Sou um apoiador</h1>
+                        <button onClick={() => navigate("/register")} className="signUp-btn">
+                            Cadastrar
+                        </button>
+                        <button onClick={login} class className="signIn-btn">
+                            Login
+                        </button>   
+                    </div>
+                </div>        
+            </div>
+        </div>    
     );
 }

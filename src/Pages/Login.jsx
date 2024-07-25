@@ -7,7 +7,7 @@ import Loader from "../components/common/Loader/index.jsx";
 
 
 export default function Login() {
-    const[loading, setLoading] = useState(true);
+    /*const[loading, setLoading] = useState(true);
     let navigate = useNavigate();
     useEffect (() => {
         onAuthStateChanged(auth, (res) => {
@@ -18,5 +18,6 @@ export default function Login() {
             }
         })
     }, [])
-    return loading ? <Loader /> : <LoginComponent />;
+    return loading ? <Loader /> : <LoginComponent />;*/
+    return <LoginComponent />;
 }

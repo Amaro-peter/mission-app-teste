@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { RegisterAPI, GoogleSignInAPI } from "../api/AuthAPI";
-import LinkedinLogo from "../assets/linkedinLogo.png";
+import LinkedinLogo from "../assets/Mission.png";
 import GoogleButton from 'react-google-button';
 import { useNavigate } from "react-router-dom";
-import '../Sass/LoginComponent.scss';
+import '../Sass/HomeComponent.scss';
 import { toast } from "react-toastify";
 
 export default function RegisterComponent() {
@@ -46,7 +46,7 @@ export default function RegisterComponent() {
                 placeholder= "Password (6 or more characters)"
             />
         </div>
-        <button onClick={login} className="login-btn">
+        <button onClick={login} className="loginBtn">
             Agree & Join
         </button>
         </div>
