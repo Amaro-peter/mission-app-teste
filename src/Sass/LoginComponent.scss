@@ -3,7 +3,8 @@ $linkedinBlue2: #0073b1;
 $linkedinBlue3: #004c75;
 
 .body{
-    background-color: white !important;
+    background-color: white;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -63,7 +64,7 @@ $linkedinBlue3: #004c75;
     .admin-btn {
         width: 120px;
         height: 40px;
-        font-size: 10px;
+        font-size: 15px;
     }
 }
 
@@ -73,6 +74,9 @@ $linkedinBlue3: #004c75;
 
 .login-wrapper {
     background-color: white;
+    height: 100vh; /* Full viewport height */
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .login-wrapper-inner {
@@ -80,16 +84,15 @@ $linkedinBlue3: #004c75;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 25px;
     padding: 2rem;
 }
 
 .missionary-button{
-    width: 1732px;
+    width: 600px;
     max-width: 90vw;
-    height: 145px;
+    height: 100px;
     padding: 1rem;
-    margin-top: 50px;
     cursor: pointer;
     background-color: #FFEFE7;
     border-radius: 50px;
@@ -98,17 +101,16 @@ $linkedinBlue3: #004c75;
     color: black;
     font-family: system-ui;
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-align: center;
     transition: background-color 0.3s;
 }
 
 .social-project-button{
-    width: 1732px;
+    width: 600px;
     max-width: 90vw;
-    height: 145px;
+    height: 100px;
     padding: 1rem;
-    margin-top: 50px;
     cursor: pointer;
     background-color: #FFEFE7;
     border-radius: 50px;
@@ -117,17 +119,16 @@ $linkedinBlue3: #004c75;
     color: black;
     font-family: system-ui;
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-align: center;
     transition: background-color 0.3s;
 }
 
 .donor-button{
-    width: 1732px;
+    width: 600px;
     max-width: 90vw;
-    height: 145px;
+    height: 100px;
     padding: 1rem;
-    margin-top: 50px;
     cursor: pointer;
     background-color: #FFEFE7;
     border-radius: 50px;
@@ -136,7 +137,7 @@ $linkedinBlue3: #004c75;
     color: black;
     font-family: system-ui;
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-align: center;
     transition: background-color 0.3s;
 }
@@ -151,4 +152,14 @@ $linkedinBlue3: #004c75;
 
 .donor-button:hover{
     background-color: #ffcfb7;
+}
+
+.page-footer{
+    background-color: white;
+    height: 450px;
+    display: flex;
+    font-family: system-ui;
+    font-weight: 600;
+    font-size: 1.6rem;
+    border: 5px solid black;
 }

@@ -45,6 +45,9 @@ export default function LoginComponent() {
                     <button onClick={() => navigate("/register")} className="social-project-button">
                         Tenho um projeto social
                     </button>
+                </div>
+                <div className="page-footer">
+                        
                 </div>    
             </div>
         </body>        
