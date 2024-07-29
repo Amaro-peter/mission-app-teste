@@ -10,25 +10,23 @@ $linkedinBlue3: #004c75;
 }
 
 .container-top-landing-page {
-    display: grid;
-    grid-template-columns: auto 1fr; /* Adjust the grid layout to position items side by side */
-    gap: 100px; /* Space between items */
-    align-items: center; /* Align items to the top */
+    display: flex;
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center;
     padding: 10px;
+    gap: 20px; /* Adjust the gap as needed */
     position: relative;
 }
 
 .linkedinLogo {
-    width: 450px;
-    max-width: 100%; /* Ensure the logo does not overflow its container */
+    width: 100%;
+    max-width: 450px;
     margin-top: 30px;
 }
 
 .admin-btn {
-    position: absolute; /* Fix the button to the top right corner of the viewport */
-    top: 2%; /* Distance from the top */
-    right: 5%;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: 100px;
     cursor: pointer;
     background-color: #FFEFE7;
@@ -40,11 +38,14 @@ $linkedinBlue3: #004c75;
     font-weight: 600;
     font-size: 40px;
     margin-top: 20px;
+    align-self: flex-end; /* Align button to the right on larger screens */
 }
 
-@media (max-width: 768px) {
+
+
+/*@media (max-width: 768px) {
     .linkedinLogo {
-        width: 250px;
+        width: 200px;
         margin-top: 20px;
     }
 
@@ -66,7 +67,7 @@ $linkedinBlue3: #004c75;
         height: 40px;
         font-size: 15px;
     }
-}
+}*/
 
 .admin-btn:hover{
     background-color: #ffcfb7;
@@ -94,14 +95,14 @@ $linkedinBlue3: #004c75;
     height: 100px;
     padding: 1rem;
     cursor: pointer;
-    background-color: #FFEFE7;
+    background-color: #fce6da;
     border-radius: 50px;
     outline: none;
     border: 5px solid black;
     color: black;
     font-family: system-ui;
     font-weight: 600;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     text-align: center;
     transition: background-color 0.3s;
 }
@@ -112,14 +113,14 @@ $linkedinBlue3: #004c75;
     height: 100px;
     padding: 1rem;
     cursor: pointer;
-    background-color: #FFEFE7;
+    background-color: #fce6da;
     border-radius: 50px;
     outline: none;
     border: 5px solid black;
     color: black;
     font-family: system-ui;
     font-weight: 600;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     text-align: center;
     transition: background-color 0.3s;
 }
@@ -130,36 +131,98 @@ $linkedinBlue3: #004c75;
     height: 100px;
     padding: 1rem;
     cursor: pointer;
-    background-color: #FFEFE7;
+    background-color: #fce6da;
     border-radius: 50px;
     outline: none;
     border: 5px solid black;
     color: black;
     font-family: system-ui;
     font-weight: 600;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     text-align: center;
     transition: background-color 0.3s;
 }
 
 .missionary-button:hover{
-    background-color: #ffcfb7;
+    background-color: #efa681;
 }
 
 .social-project-button:hover{
-    background-color: #ffcfb7;
+    background-color: #efa681;
 }
 
 .donor-button:hover{
-    background-color: #ffcfb7;
+    background-color: #efa681;
+}
+
+.hr-text-landing-page {
+    border-top: 5px solid rgba(0, 0, 0, 0.3);
 }
 
 .page-footer{
-    background-color: white;
-    height: 450px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    gap: 35px;
+}
+
+.links-page-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-link-page-footer {
     font-family: system-ui;
     font-weight: 600;
     font-size: 1.6rem;
-    border: 5px solid black;
+    cursor: pointer;
+    color: black;
+    max-width: 1px; /* Set the maximum width */
+    word-wrap: break-word; /* Ensure long words break to the next line */
+    overflow-wrap: break-word; /* Ensure long words break to the next line */
+}
+
+.text-link-page-footer-admin-btn{
+    text-decoration: none;
+    font-family: system-ui;
+    font-weight: 600;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: black;
+    max-width: 1px; /* Set the maximum width */
+    word-wrap: break-word; /* Ensure long words break to the next line */
+    overflow-wrap: break-word; /* Ensure long words break to the next line */
+    margin-top: 20px;
+    align-self: flex-end; /* Align button to the right on larger screens */
+}
+
+.text-link-page-footer-admin-btn:hover{
+    background-color: #ffcfb7;
+}
+
+.text-link-page-footer:hover{
+    background-color: #ffcfb7;
+}
+
+.social-media-page-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.x-logo{
+    width: 80px;
+    margin-top: 15px;
+}
+
+.insta-logo{
+    width: 80px;
+    margin-top: 15px;
+}
+
+.face-logo{
+    width: 80px;
+    margin-top: 15px;
 }
