@@ -7,43 +7,69 @@ $linkedinBlue3: #004c75;
     padding: 0;
 }
 
-.login-wrapper {
+.login-wrapper-missionary {
     background-color: white !important;
     height: 100vh;
 }
 
-.linkedin-Logo{
-    width: 450px;
-    margin-top: 50px;
-    margin-left: 50px;
-
+.container-top-missionary{
+    display: flex;
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center;
+    padding: 10px;
+    gap: 20px; /* Adjust the gap as needed */
+    position: relative;
 }
 
+.MissionLogo{
+    width: 100%;
+    max-width: 450px;
+    margin-top: 30px;
+}
 
-
-.login-wrapper-inner{
+.login-wrapper-inner-missionary{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 15px;
 }
 
-.forms-container{
-    gap: 20px;
-    .heading{
-        font-family: system-ui;
-        font-weight: 500;
-        color: rgba(0, 0, 0, 0.9);
-        font-size: 100px;
-    }
-    .text-link-login-missionaries-btn{
-        text-decoration: none;
-    }
+.container-missionary-btn{
 }
 
+.missionary-application-form-btn{
+    width: 600px;
+    max-width: 90vw;
+    height: 100px;
+    padding: 1rem;
+    cursor: pointer;
+    background-color: #fce6da;
+    border-radius: 50px;
+    outline: none;
+    border: 5px solid black;
+    color: black;
+    font-family: system-ui;
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
+}
 
+.missionary-application-form-btn:hover{
+    background-color: #efa681;
+}
 
-.loginBtn{
+.heading-missionary-forms {
+    align-items: center;
+    text-align: center;
+    font-family: system-ui;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.missionary-login-button{
     width: 300px;
     height: 50px;
     cursor: pointer;
@@ -60,68 +86,37 @@ $linkedinBlue3: #004c75;
     border: 2px solid black;
 }
 
-.loginBtn:hover{
+.missionary-login-button:hover{
     background-color: #efa681;
 }
 
-.auth-inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 300px;
-}
-
-.hr-text {
-    line-height: 1em;
-    position: relative;
-    outline: 0;
-    border: 0;
-    color: black;
-    text-align: center;
-    height: 1.5em;
-    opacity: .5;
-    &:before {
-      content: '';
-      // use the linear-gradient for the fading effect
-      // use a solid background color for a solid bar
-      background: linear-gradient(to right, transparent, #818078, transparent);
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 100%;
-      height: 1px;
-    }
-    &:after {
-      content: attr(data-content);
-      position: relative;
-      display: inline-block;
-      color: black;
-  
-      padding: 0 .5em;
-      line-height: 1.5em;
-      // this is really the only tricky part, you need to specify the background color of the container element...
-      color: #818078;
-      background-color: #fcfcfa;
-    }
-}
-
-.google-btn-container{
+.back-landing-page{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .google-btn {
-        width: 300px !important;
-    }
+    text-align: center; 
+}
 
-    .go-to-signup{
-        font-size: 18px;
-    }
+.missionary-landing-btn{
+    width: 600px;
+    max-width: 90vw;
+    height: 100px;
+    padding: 1rem;
+    cursor: pointer;
+    background-color: #fce6da;
+    border-radius: 50px;
+    outline: none;
+    border: 5px solid black;
+    color: black;
+    font-family: system-ui;
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
+}
 
-    .join-now{
-        color: $linkedinBlue1;
-        font-family: system-ui;
-        cursor: pointer;
-        font-size: 18px;
-    }
+.missionary-landing-btn:hover{
+    background-color: #efa681;
 }

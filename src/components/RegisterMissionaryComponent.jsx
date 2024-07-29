@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { RegisterAPI, GoogleSignInAPI } from "../api/AuthAPI";
-import LinkedinLogo from "../assets/Mission.png";
+import MissionLogo from "../assets/Mission.png";
 import GoogleButton from 'react-google-button';
 import { useNavigate } from "react-router-dom";
-import '../Sass/RegisterSupporterComponent.scss';
+import '../Sass/RegisterMissionaryComponent.scss';
 import { toast } from "react-toastify";
 
-export default function RegisterComponent() {
+export default function RegisterMissionaryComponent() {
     let navigate = useNavigate();
     const [credentials, setCredentials] = useState({});
     const login = async () => {
@@ -23,59 +23,41 @@ export default function RegisterComponent() {
         let response = GoogleSignInAPI();
         navigate("/home");
     };
+
+    const handleClick = () => {
+        window.window.open('https://docs.google.com/forms/d/e/1FAIpQLSc7jX1orcS1fXn2kJh29qkr4TwofY6Mcb62OuWVJ__lS-QD8A/viewform?usp=sf_link', '_blank');
+    };    
+
     return( 
-    <div className = "login-wrapper">
-        <img src ={LinkedinLogo} className="linkedinLogo"/>   
-        <div className="login-wrapper-inner">
-            <div className="forms-container">
-                <p className="heading">Faça parte da nossa comunidade de missionários</p>
-                <p className="heading">
-                    Preencha o formulário de aplicação abaixo. Já foi aprovado?{" "}
-                    <a className="text-link-login-missionaries-btn" href="https://forms.gle/7Q7Z8Z9Q7Q7Z8Z9Q7" target="_blank" rel="noreferrer">
-                        Login para Missionários
-                    </a>
-                </p>
-            </div>    
-            <div className="auth-inputs">
-                <input
-                    onChange={(event) =>
-                        setCredentials({ ...credentials, email: event.target.value})
-                    }
-                    type="email"
-                    className = "common-input"
-                    placeholder = "Email ou Número de telefone"
-                />
-                <input 
-                    onChange= {(event) =>
-                        setCredentials({...credentials, password: event.target.value})
-                    }
-                    type="password"
-                    className="common-input"
-                    placeholder= "Senha"
-                />
-            </div>
-            <button onClick={login} className="loginBtn">
-                Aceitar & continuar
-            </button>
+    <div className = "login-wrapper-missionary">
+        <div className="container-top-missionary">
+            <img src={MissionLogo} className="MissionLogo" /> 
         </div>
-        <hr className="hr-text" data-content="or"/>
-        <div className="google-btn-container">
-            <GoogleButton
-                className="google-btn"
-                onClick={googleSignIn}
-            />
-            <p className="go-to-signup">
-               Já possui cadastro?{" "}
-                <span className="join-now" onClick={() => navigate('/')}>
-                    Login
-                </span>
-            </p>
-            <p className="go-to-signup">
-               Missionário ou Projeto Social?{" "}
-                <span className="join-now" onClick={() => navigate('/')}>
-                    Início
-                </span>
-            </p>
+        <div className="login-wrapper-inner-missionary">
+            <h1 className="heading-missionary-forms">
+                Clique no botão abaixo para o formulário   
+            </h1> 
+            <div className="container-missionary-btn">
+                <button className="missionary-application-form-btn" onClick={handleClick}>
+                    Formulário de aplicação
+                </button>
+            </div>
+            <h1 className="heading-missionary-forms">
+                Cadastro aprovado?    
+            </h1>
+            <div className="container-missionary-btn">
+                <button className="missionary-application-form-btn" onClick={() => navigate("/LoginMissionary")}>
+                    Login Missionário
+                </button>
+            </div>
+            <div className="back-landing-page">
+                <h1 className="heading-missionary-forms">
+                    Apoiador ou Projeto social?   
+                </h1>
+                <button className="missionary-landing-btn" onClick={() => navigate("/")}>
+                        Início
+                </button>
+            </div>   
         </div>
     </div>
     );
